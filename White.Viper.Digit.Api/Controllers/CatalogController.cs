@@ -1,23 +1,29 @@
 using Microsoft.AspNetCore.Mvc;
 using White.Viper.Digit.Domain.Catalog;
+using White.Viper.Digit.Data;
+
 
 namespace White.Viper.Digit.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/catalog")]
     public class CatalogController : ControllerBase
     {
-        [HttpGet]
+    
+        private readonly StoreContext _db;
+        
+        public CatalogController(StoreContext db)
+        {
+            _db = db;
+        }
+
+      [HttpGet]
       public IActionResult GetItems()
     {
-        var items = new List<Item>()
-        {
-            new Item("Shirt", "Ohio State shirt.", "Nike", 29.99m),
-            new Item("Shorts", "Ohio State shorts.", "Nike", 44.99m)
-        };
+        return Ok(_db.Items);
 
-        return Ok(items);
     } 
+
         [HttpGet("{id:int}")]
         public IActionResult GetItem(int id)
         {
@@ -45,7 +51,7 @@ namespace White.Viper.Digit.Api.Controllers
         {
             return NoContent();
         }
-        [HttpPut("{id:int}")]
+        [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {
             return NoContent();
