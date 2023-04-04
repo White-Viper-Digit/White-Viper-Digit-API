@@ -473,5 +473,11 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+
 # Windows shortcuts
 *.lnk
+
+# exclude databse files
+*.sqlite
+
+
