@@ -477,7 +477,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# exclude databse files
+# exclude database files
 *.sqlite
 
 

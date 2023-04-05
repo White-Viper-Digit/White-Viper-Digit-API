@@ -7,13 +7,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<StoreContext>(options => 
-    options.UseSqlite("Data Source=../Registar.sqlite", 
-    b => b.MigrationsAssembly("White.Viper.Digit.Api"))
-    );
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddDbContext<StoreContext>(Options =>
+    Options.UseSqlite("Data Source= ../Registrar.sqlite",
+    b => b.MigrationsAssembly("Emerald.Tiger.Api"))
+
+);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 
 var app = builder.Build();
 

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using White.Viper.Digit.Domain.Catalog;
 using White.Viper.Digit.Data;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace White.Viper.Digit.Api.Controllers
 {
@@ -58,15 +58,37 @@ namespace White.Viper.Digit.Api.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public IActionResult Put(int id, Item item)
+        public IActionResult PutItem(int id, [FromBody] Item item)
         {
+            if(id != item.Id)
+            {
+                return BadRequest();
+            }
+
+            if(_db.Items.Find(id) == null)
+            {
+                return NotFound();
+            }
+
+            _db.Entry(item).State = EntityState.Modified;
+            _db.SaveChanges();
+
             return NoContent();
         }
 
         [HttpDelete("{id:int}")]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteItem(int id)
         {
-            return NoContent();
+            var item = _db.Items.Find(id);
+            if(item == null)
+            {
+                return NotFound();
+            }
+
+            _db.Items.Remove(item);
+            _db.SaveChanges();
+
+            return Ok();
         }
     }  
 
