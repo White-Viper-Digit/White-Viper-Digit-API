@@ -1,5 +1,6 @@
 ﻿using White.Viper.Digit.Domain.Catalog;
 using Microsoft.EntityFrameworkCore;
+using White.Viper.Digit.Domain.Orders;
 
 namespace White.Viper.Digit.Data
 {
@@ -10,6 +11,8 @@ namespace White.Viper.Digit.Data
         { }
 
         public DbSet<Item> Items { get; set; }
+
+        public DbSet<Order> Orders {get; set;}
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
