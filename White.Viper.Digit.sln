@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "White.Viper.Digit.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "White.Viper.Digit.Data", "White.Viper.Digit.Data\White.Viper.Digit.Data.csproj", "{A06BDCC7-17E3-467B-81FC-D4385D8A166F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{ABF3D9BD-C749-410C-B26A-AD7DB5FEB61F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "White.Viper.Digit.Domain.Tests", "tests\White.Viper.Digit.Domain.Tests\White.Viper.Digit.Domain.Tests.csproj", "{D64D75A1-92BB-4FD6-AAB7-9B1FD7C6C3E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,12 @@ Global
 		{A06BDCC7-17E3-467B-81FC-D4385D8A166F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A06BDCC7-17E3-467B-81FC-D4385D8A166F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A06BDCC7-17E3-467B-81FC-D4385D8A166F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D64D75A1-92BB-4FD6-AAB7-9B1FD7C6C3E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D64D75A1-92BB-4FD6-AAB7-9B1FD7C6C3E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D64D75A1-92BB-4FD6-AAB7-9B1FD7C6C3E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D64D75A1-92BB-4FD6-AAB7-9B1FD7C6C3E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D64D75A1-92BB-4FD6-AAB7-9B1FD7C6C3E7} = {ABF3D9BD-C749-410C-B26A-AD7DB5FEB61F}
 	EndGlobalSection
 EndGlobal
