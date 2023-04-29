@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using White.Viper.Digit.Domain.Catalog;
 using White.Viper.Digit.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace White.Viper.Digit.Api.Controllers
 {
@@ -77,6 +78,7 @@ namespace White.Viper.Digit.Api.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize("delete:catalog")]
         public IActionResult DeleteItem(int id)
         {
             var item = _db.Items.Find(id);
